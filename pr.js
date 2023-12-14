@@ -1,185 +1,69 @@
-//for loop
-// let students = ["rubi","rohi","jani","gugi"];
-// for (let i=0; i<students.length; i++){
-//     console.log(students[i]);
-// }
+let arr = document.getElementsByClassName("op");
+console.log(arr);
+console.dir(arr);
 
-// //for of 
-// for (let student of students){
-//     console.log(student);
-// // }
+let arr = document.getElementsByTagName("p");
+console.log(arr);
+console.dir(arr);
 
-// let cities = ["delhi","mumbai","pune"];
-// for(let city of cities){
-//     console.log(city.toUpperCase());
-// }
+let first = document.querySelector("#button");
+ console.dir(first);
 
-// let marks = [85,97,44,37,76,60];
-// let sum = 0;
-// for (let val of marks){
-//     sum += val;
-// }
-// let avg =sum/marks.length;
-// console.log(`avg marks of the class =${avg}`);
-
-// let item =[250,645,300,900,50];
-
-// let i= 0;
-// for(let val of item){
-//     console.log(`the index of values of ${i}= ${val}`);
-//     let offer =val/10;
-//     item[i] = item[i]-offer;
-//     console.log(`values of offer=${item[i]}`)
-//     i++;
-// }
-
-// for (let i =0; i,item.length; i++){
-//     let offer = item[i]/10;
-//     item [i]-=offer;
-// }
-// console.log(item);
-
-// class a {
-//     x = 10
-//     fun()
-//     {
-//         constructor()
-//         {
-//             console.log("hi gm");
-//         }
-//     }
-// }
-// class b extends a 
-// { 
-//     y =29
-//     constructor()
-//     {
-//         super();
-//         console.log("by b this second point")
-//     }
-   
-// }
-// let a1= new a();
-// let b1 = new b();
-
-// b1.fun();
-
-//document object module (dom);
-
-// let marvalheros = ["thor","spiderman","ironman"];
-// let dcheoers =["superamn","batman"];
-// let indian  = ["krish","shaktiman","dhoom"];
-
-// let heroes =marvalheros.concat(dcheoers,indian);
-// console.log(heroes);
-// let marvalheros = ["thor","spiderman","ironman"];
-// let val =marvalheros.shift();
-// console.log(val);
-
-// let marvalheros = ["thor","spiderman","ironman","antman","dr.stream","badman"];
-// console.log(marvalheros);
-// console.log(marvalheros.slice(1,4));
-
-// let compamies = ["boolberg","microsoft","uber","google","ibm","netflix"];
-// compamies.push["amazon"];
-// console.log(compamies);
-
-//function and methods.
-// function myfunction(){
-//     console.log("welcome guyys of new");
-//     console.log("we are lerning js");
-// }
-
-// // myfunction();
-// function myclass (msg,n){
-//     console.log(msg,n);
-// }
-
-// myclass("best class in indore",100);
-// function sum (x,y){
-//     console.log(x+y);
-// }
-// sum(20,30);
-
-// function sum (x,y){
-//     s = x + y;
-//     return s;
-// }
-
-// let val= sum (3,5);
-// console.log(val);
+let all =document.querySelectorAll(".op");
+ console.dir(all);
 
 
-// function myclass(name,n){
-//     console.log(name,n);
-// }
-// myclass("roni",21)
+let div = document.querySelector("div");
+console.dir(div);
+console.log(div);
 
-// //sum function
-// function sum (a ,b){
-//      return a+b;
-// }
-//multiplication function
-// function mul (a , b){
-//     return a*b;
-// }
+let div = document.querySelector("div");
+console.dir(div);
 
-// //modurn jscript
+let button = document.querySelector("button");
+console.log(button);
 
-// const arrsum = (a,b)=>{
-//     console.log(a +b);
-// }
-// arrsum(34,56);
+let div = document.querySelector("div");
+console.log(div);
 
-// const printhello = ()=>{
-//     console.log("hello");
-// }
-// printhello();
-// let arr = ["pune","mumbai","cg","kn"];
-// arr.forEach((val,n)=> {
-//     console.log(val.toUpperCase(),100);
-// });
+let id = div.getAttribute("id");
+console.log(id);
 
-
-// let nums =[1,2,4,4,5,6];
-// nums.forEach((nums)=>{
-//     console.log(nums*nums);
-
-// });
-
-// let str = ["rahul","soni"]
-
-// str.map((val)=>{
-//     console.log(val)
-// }
-
-// )
-
-// let nums = [65,32,12,45]
-
-// let newarr = nums.map((val)=>{
-//     return val * 2;
-
-// });
-
-// console.log(newarr);
-
-// let arr = [23,34,45,56]
-
-// let evanarr = arr.filter((val)=>{
-//     return val>30;
-// })
-// console.log(evanarr);
-
-//reudce
-let arr = [1,20,3,4,5]
-
-const output = arr.reduce((prev, curr)=>{
-    return prev > curr ?  prev : curr;
-})
-console.log(output);
+let name = div.getAttribute("name");
+console.log(name);
 
 
 
 
+let para = document.querySelector("p");
+console.log(para.setAttribute("class", "new class"));
 
+let h1= document.querySelector("h1");
+console.log(h1);
+
+let div = document.querySelector("div");
+div.style.backgroundColor=('red')
+div.style.backgroundColor=('white')
+div.style.color= ('black');
+div.style.height = ('150px');
+div.style.width = ('150px');
+
+let button = document.querySelector("button")
+console.log(button);
+
+button.style.backgroundColor=('red');
+button.style.color = ('white');
+button.style.height = ('150px');
+button.style.width = ('150px');
+
+
+let btn = document.createElement('button');
+btn.innertext = 'add me';
+console.log(btn);
+
+
+let ul=document.querySelector("ul");
+ul.after(btn);
+
+let btn = document.createElement("button");
+// console.log(btn);
