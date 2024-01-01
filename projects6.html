@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./projects6.css">
+</head>
+<body>
+    <div class="gellery-wrap">
+         <img src="https://cdn-icons-png.flaticon.com/512/4315/4315454.png" height="80px"  id="backbtn">
+
+         <div class="gellery">
+            <div>
+               <span><img src="https://images.unsplash.com/photo-1620766165457-a8025baa82e0?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJlJTIwb2YlMjBpbmRpYXxlbnwwfHwwfHx8MA%3D%3D" height="300px"></span>
+               <span><img src="https://i.pinimg.com/736x/c8/86/d6/c886d6a64f8f06b82aff721b1b4897e3.jpg" height="300px"></span>
+               <span><img src="https://preview.redd.it/beautiful-nature-generated-by-ai-v0-bniwauk88zob1.jpg?width=640&crop=smart&auto=webp&s=31ef3b3745b7a89fa00d398dc7eb9a92ebede888" height="300px"></span>
+            </div>
+   
+            <div class="div2">
+               <span><img src="https://www.whoa.in/download/simple-wallpapers---simple-wallpapers-free-hd-download" height="300px"></span>
+               <span><img src="https://i.pinimg.com/1200x/86/9d/98/869d9814541e62ccb9439ed24d59b355.jpg" height="300px"></span>
+               <span><img src="https://cdn.wallpapersafari.com/1/25/FTABxC.jpg" height="300px"></span>
+            </div>
+       </div>
+
+         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Eo_circle_red_arrow-right.svg/2048px-Eo_circle_red_arrow-right.svg.png" height="80px" id="nextbtn">
+    </div>
+    
+    
+</body>
+<script>
+    let scrollcontainer = document.querySelector(".gellery");
+   let backbtn = document.getElementById("backbtn");
+    let nextbtn = document.getElementById("nextbtn");
+
+    scrollcontainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scrollcontainer.scrollLeft += evt.deltaY;
+        scrollcontainer.style.scrollbehavior = "auto"
+    });
+
+    nextbtn.addEventListener("click", ()=>{
+        scrollcontainer.scrollLeft += 900;
+    })
+
+    backbtn.addEventListener("click", ()=>{
+        scrollcontainer.scrollLeft -= 900;
+    })
+
+
+</script>
+</html>
+
+
