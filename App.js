@@ -1,106 +1,66 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import "./App.css";
 
 export default function App() {
-    const [values, setValues] = useState({
-        fullname: '',
-        username: '',
-        email: '',
-        number: '',
-        gender: '',
-        subject: '',
-        about: ''
-    });
+  const [user, setUser] = useState('');
+  const [password, setPassword] = useState('');
+  const [userError, setUserError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setValues(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
+  const handleSubmit = (e) => {
+    if(user.length<6 || password.length < 6)
+    {
+      alert("pls enter a correct values")
+    }
+    else{
+      alert("sucesss")
+    }
+    e.preventDefault();
+  }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        axios.post('https://jsonplaceholder.typicode.com/posts', values)
-            .then(response => {
-                console.log(response.data);
-                alert('Form submitted successfully!');
-                setValues({
-                    fullname: '',
-                    username: '',
-                    email: '',
-                    number: '',
-                    gender: '',
-                    subject: '',
-                    about: ''
-                });
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Error submitting form. Please try again.');
-            });
-    };
+  const handleUser = (e) => {
+    let item = e.target.value;
+    if (item.length < 6) {
+      setUserError(true);
+    } else {
+      setUserError(false);
+    }
+    setUser(item);
+  }
 
-    
-    const handleReset = () => {
-        setValues({
-            fullname: '',
-            username: '',
-            email: '',
-            number: '',
-            gender: '',
-            subject: '',
-            about: ''
-        });
-    };
+  const handlePassword = (e) => {
+    let item = e.target.value;
+    if (item.length < 6) {
+      setPasswordError(true);
+    } else {
+      setPasswordError(false);
+    }
+    setPassword(item);
+  }
 
-    return (
-        <>
-            <div className='container'>
-                <h3>Form in React</h3>
-                <form action="form" className='form' onSubmit={handleSubmit}>
-                    <label className='fw-bold' htmlFor="fullname">Full Name</label>
-                    <input type="text" name="fullname" placeholder='Enter a name'
-                        value={values.fullname} onChange={handleChange} required />
+  
 
-                    <label className='fw-bold' htmlFor="username">Username</label>
-                    <input type="text" name="username" placeholder='Username'
-                        value={values.username} onChange={handleChange} required />
+  return (
+    <>
+      <form className='form' onSubmit={handleSubmit}>
+        <h1>Form validation</h1>
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input type="text" placeholder='Enter a username' onChange={handleUser} value={user} />
+          {userError && <span className="error">at least 6 characters long</span>}
+        </div>
+        <br />
 
-                    <label className='fw-bold' htmlFor="email">Email</label>
-                    <input type="text" name="email" placeholder='Enter an Email'
-                        value={values.email} onChange={handleChange} required />
+        <div>
+          <label htmlFor="password">Enter a Password:</label>
+          <input type="password" placeholder='Enter a Password' onChange={handlePassword} value={password} />
+          {passwordError && <span className="error"> at least 6 characters long</span>}
+        </div>
+        <br />
+        <button type="submit">Submit</button>
+      </form>
 
-                    <label className='fw-bold' htmlFor="number">Number</label>
-                    <input type="text" name="number" placeholder='Enter a conform number'
-                        value={values.number} onChange={handleChange} />
-
-                    <label className='fw-bold' htmlFor="gender">Gender:</label>
-                    <div className="gender">
-                        <input className='ms-3' type="radio" name="gender" value="male" onChange={handleChange} /> Male
-                        <input className='ms-3' type="radio" name="gender" value="female" onChange={handleChange} /> Female
-                        <input className='ms-3' type="radio" name="gender" value="other" onChange={handleChange} /> Other
-                    </div>
-
-                    <label htmlFor="about">About</label>
-                    <textarea name="about" id="about" cols="20" rows="5" placeholder='Enter description'
-                        value={values.about} onChange={handleChange}></textarea>
-
-                    <label htmlFor="subject">Subject</label>
-                    <select name="subject" id="subject" value={values.subject} onChange={handleChange}>
-                        <option value="math">Math</option>
-                        <option value="physics">Physics</option>
-                        <option value="chemistry">Chemistry</option>
-                    </select>
-
-                    <div className="btn mt-2">
-                        <button className='btn btn-primary' type='submit'>Register</button>
-                        <button className='btn btn-success ms-5' type='button' onClick={handleReset}>Reset</button>
-                    </div>
-                </form>
-            </div>
-        </>
-    );
+      
+    </>
+  );
 }
