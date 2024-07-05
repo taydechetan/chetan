@@ -5,8 +5,7 @@ export default function card() {
   return (
     <div>
         hello bye card
-        
-    </div>
+           </div>
   )
 }
 
