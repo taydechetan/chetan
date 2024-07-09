@@ -1,66 +1,39 @@
-import React, { useState } from 'react';
-import "./App.css";
+import React, { useEffect, useState } from 'react';
+import './App.css';
 
 export default function App() {
-  const [user, setUser] = useState('');
-  const [password, setPassword] = useState('');
-  const [userError, setUserError] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
+  const [articles, setArticles] = useState([]);
 
-  const handleSubmit = (e) => {
-    if(user.length<6 || password.length < 6)
-    {
-      alert("pls enter a correct values")
-    }
-    else{
-      alert("sucesss")
-    }
-    e.preventDefault();
-  }
-
-  const handleUser = (e) => {
-    let item = e.target.value;
-    if (item.length < 6) {
-      setUserError(true);
-    } else {
-      setUserError(false);
-    }
-    setUser(item);
-  }
-
-  const handlePassword = (e) => {
-    let item = e.target.value;
-    if (item.length < 6) {
-      setPasswordError(true);
-    } else {
-      setPasswordError(false);
-    }
-    setPassword(item);
-  }
-
-  
+  useEffect(() => {
+    fetch('https://newsapi.org/v2/everything?q=india&from=2024-06-09&sortBy=publishedAt&apiKey=ee83da25d2624cb1aebd60b07fbcd965')
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setArticles(data.articles); 
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []); 
 
   return (
-    <>
-      <form className='form' onSubmit={handleSubmit}>
-        <h1>Form validation</h1>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input type="text" placeholder='Enter a username' onChange={handleUser} value={user} />
-          {userError && <span className="error">at least 6 characters long</span>}
-        </div>
-        <br />
-
-        <div>
-          <label htmlFor="password">Enter a Password:</label>
-          <input type="password" placeholder='Enter a Password' onChange={handlePassword} value={password} />
-          {passwordError && <span className="error"> at least 6 characters long</span>}
-        </div>
-        <br />
-        <button type="submit">Submit</button>
-      </form>
-
-      
-    </>
+    <div>
+      {articles.map((article, index,e) => (
+         <div className='section'>
+           <img className='img' src={article.urlToImage} alt="img" />
+           <h3>{article.author}</h3>
+           <h5 key={index}>{article.title}</h5>
+           <p>{article.description}</p>
+         </div>
+        
+      ))}
+    </div>
   );
 }
+
+
