@@ -7,6 +7,7 @@ import { FaEye } from "react-icons/fa";
 //-----------//
 import { GoogleLogin } from "@react-oauth/google";
 import  FacebookLogin  from "react-facebook-login";
+import GitHubLogin from 'react-github-login'; 
 import axios from "axios";
 
 export default function login() {
@@ -23,6 +24,25 @@ export default function login() {
     } else {
       console.error("Facebook login failed", response);
     }
+  };
+
+  const responseGitHub = async (response) => {
+    if (response.code) {
+      try {
+        const res = await axios.get(
+          `https://api.github.com/user?access_token=${response.code}`
+        );
+        console.log("GitHub User Info:", res.data);
+      } catch (err) {
+        console.error("Failed to fetch GitHub user info", err);
+      }
+    } else {
+      console.error("GitHub login failed", response);
+    }
+  };
+
+  const onFailure = (error) => {
+    console.error('GitHub login failed:', error);
   };
 
   return (
@@ -72,11 +92,7 @@ export default function login() {
         </div>
 
         <div className="buttonss">
-          {/* <div className='google'>
-           <p className='icon3 mt-4 ms-2'><FcGoogle /></p>
-           <input className='text-center' type="text" placeholder='Continue oF Google' />
-        </div> */}
-
+          
           <div className="google">
             <GoogleLogin
               onSuccess={(credentialResponse) =>
@@ -101,43 +117,22 @@ export default function login() {
                 />
           </div>
 
-          {/* <FacebookLogin
-                  appId="1170198007355770" 
-                  // autoLoad={false}
-                  fields="name,email,picture"
-                  callback={responseFacebook}
-                  render={(renderProps) => (
-                    <button className='FB-with-btn' onClick={renderProps.onClick} >Login with Facebook</button>
-                  )}
-                /> */}
 
-          {/* <div className="facebook">
-            <p className="icon4 mt-4 ms-2">
-              <FaFacebook />
-            </p>
-            <input
-              className="text-center"
-              type="text"
-              placeholder="Continue oF Facbook"
-              
-            />
-          </div> */}
+          <div className="github">
+            <GitHubLogin
+                clientId="YOUR_GITHUB_CLIENT_ID"
+                redirectUri="http://localhost:3000" 
+                onSuccess={responseGitHub}
+                onFailure={onFailure}
+           >
+            <button className="github-btn">Login with GitHub</button>
+             </GitHubLogin>
+          </div>
         </div>
       </div>
-
-      {/* <div>
-        <GoogleLogin
-          onSuccess={(credentialResponse) => {
-            console.log(credentialResponse);
-          }}
-          onError={() => {
-            console.log("Login Failed");
-          }}
-        />
-        
-      </div> */}
-
       <hr />
     </>
   );
 }
+
+
