@@ -104,6 +104,12 @@ export default function login() {
             />
           </div>
 
+          {/* <div>
+            <img src="img" alt="" />
+            <p>Name:{name}</p>
+            <p>price:{price}</p>
+          </div> */}
+
 
           <div className="facebook" >
           <FacebookLogin
