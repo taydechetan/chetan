@@ -114,7 +114,6 @@ export default function login() {
           <div className="facebook" >
           <FacebookLogin
                   appId="1170198007355770" 
-                  // autoLoad={false}
                   fields="name,email,picture"
                   callback={responseFacebook}
                   render={(renderProps) => (
