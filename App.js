@@ -1,78 +1,107 @@
 import React, { useState } from "react";
 import "./App.css";
-import { render } from "@testing-library/react";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
-  const [title, settitle] = useState("");
-  const [desc, setdesc] = useState("");
-  const[maintask,settask] =useState([]);
-  const submithandeler = (e) => {
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  const [mainTask, setMainTask] = useState([]);
+  // const [todo, setTodo] = useState('');
+
+  const submitHandler = (e) => {
     e.preventDefault();
-    // console.log("First-Name=",title);
-    // console.log("Last-Name=",desc);
-    settask([...maintask,{title,desc}])
-    console.log(maintask)
-    setdesc("");
-    settitle("");
+    setMainTask([...mainTask, { title, desc }]);
+    console.log(mainTask);
+    setDesc("");
+    setTitle("");
   };
 
-  const deletHandeler= (i)=>{
-    let copytask=[...maintask]
-    copytask.splice(i,1)
-    settask(copytask);
-  }
+  const deleteHandler = (i) => {
+    let copyTask = [...mainTask];
+    copyTask.splice(i, 1);
+    setMainTask(copyTask);
+    toast.success(`List "${mainTask[i].title}" deleted successfully!`);
+  };
 
-  const render=maintask.map((t,i)=>{
-     return(
-     <ol key={i}>
+  const handleTodo = () => {
+    toast.success("🦄 Wow so easy!", {
+      position: "top-left",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
+  };
+
+  const render = mainTask.map((t, i) => (
+    <ol key={i}>
       <li>
-       <div className="d-flex justify-content-between">
-         <h5>{t.title}</h5>
-         <h5>{t.desc}</h5>
-         <button className="btn btn-danger" onClick={()=>{deletHandeler()}} >Remove</button>
-         </div>
-       </li>
-     </ol>
-     )
-  })
+        <div className="d-flex justify-content-between">
+          <h5>Fisrtname={t.title},</h5>
+          <h5>Lastname={t.desc}</h5>
+          <button className="btn btn-danger" onClick={() => deleteHandler(i)}>
+            Remove
+          </button>
+        </div>
+      </li>
+    </ol>
+  ));
 
   return (
     <>
-    {/* <div className="container-fluid"> */}
-      <form onSubmit={submithandeler}>
-        <h3 className="text-center" style={{ color: "mediumslateblue" }}>Todo List</h3>
+      <form onSubmit={submitHandler}>
+        <h3
+          onClick={handleTodo}
+          className="text-center"
+          style={{ color: "mediumslateblue" }}
+        >
+          Todo List
+        </h3>
         <div className="onsubmit d-flex">
           <div>
             <input
               type="text"
-              placeholder="Enter a Firstname"
+              placeholder="Enter a Title"
               value={title}
-              onChange={(e)=>{
-                settitle(e.target.value);
-              }}
+              onChange={(e) => setTitle(e.target.value)}
             />
           </div>
-
           <div>
             <input
               type="text"
-              placeholder="Enter a Lastname"
+              placeholder="Enter a Description"
               value={desc}
-              onChange={(e)=>{
-                setdesc(e.target.value);
-              }}
+              onChange={(e) => setDesc(e.target.value)}
             />
           </div>
-
           <button className="btn btn-success ms-2">Add This</button>
         </div>
       </form>
-    <hr />
-      <div className="remove p-2 d-flex m-auto" style={{backgroundColor:"#FEFAE0",width:"80%"}} >
+      <hr />
+      <div
+        className="remove p-2 d-flex m-auto"
+        style={{ backgroundColor: "#FEFAE0", width: "80%" }}
+      >
         <ul>{render}</ul>
       </div>
-    {/* </div> */}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+      />
     </>
   );
 }
-
