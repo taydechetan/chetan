@@ -1,49 +1,70 @@
-import React from 'react'
-import "./navbar1.css"
+import React from "react";
 import { FaCartArrowDown } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import "./navbar1.css";
 
-export default function navbar1({size,setshow}) {
+export default function Navbar1({ size, setshow }) {
   return (
-   <>
-   <div className='container-flude'>
-   <nav className="navbar navbar-expand-lg navbar-light bg-light">
-   <div className="container-fluid">
-    <a className="navbar-brand" href="#"onClick={()=>setshow(true)} >Navbar</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Link</a>
-        </li>
-        <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+    <>
+      <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: "#7776B3", color: "white" }}>
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
+            <img
+              src="https://cdn.pixabay.com/animation/2022/07/31/06/27/06-27-17-124_512.gif"
+              onClick={() => setshow(true)}
+              style={{ width: "100px", height: "50px", borderRadius: "40%" }}
+              alt="Brand Logo"
+              className="images11"
+            />
           </a>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href="#">Action</a></li>
-            <li><a className="dropdown-item" href="#">Another action</a></li>
-            <li><hr className="dropdown-divider"/></li>
-            <li><a className="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-
-      <form className="d-flex mx-5"onClick={()=>setshow(false)} >
-        <FaCartArrowDown className='icon1'/>
-         <span> {size}</span>
-      </form>
-    </div>
-  </div>
-</nav>
-   </div>
-   </>
-  )
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse text-center" id="navbarSupportedContent">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link active" aria-current="page" to="/amazon" style={{ color: "white" }}>
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/card" style={{ color: "white" }}>
+                  Card
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/cart" style={{ color: "white", textDecoration: "none" }}>
+                  Cart
+                </Link>
+              </li>
+              <li className="nav-item text-white">
+                <Link className="nav-link" to="/amazon" style={{ color: "white" }}>
+                  Amazon
+                </Link>
+              </li>
+              <li className="nav-item text-white">
+                <Link className="nav-link" to="/signup" style={{ color: "white" }}>
+                  Sign-up
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/cart" className="d-flex mx-5 mt-2">
+                  <FaCartArrowDown className="iconnns" onClick={() => setshow(false)} />
+                  <span className="text-light">{size}</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </>
+  );
 }

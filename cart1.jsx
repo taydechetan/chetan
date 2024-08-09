@@ -13,12 +13,12 @@ export default function Cart1({ cart, setcart }) {
     });
     setPrice(total);
   };
-
+  
   const getLocalItems = () => {
     const list = localStorage.getItem("list");
     return list ? JSON.parse(list) : [];
   };
-
+  
   useEffect(() => {
     const initialCart = getLocalItems();
     setcart(initialCart);
@@ -65,10 +65,10 @@ export default function Cart1({ cart, setcart }) {
               <div className="cart-img d-flex">
                 <img
                   src={item.image}
-                  alt={item.name}
+                  alt={item.title}
                   style={{ width: "100px" }}
                 />
-                <div className="d-flex">
+                <div className="productsjs  d-flex">
                     <h4 className="ms-2 mt-2">Product: {item.category}</h4>
                     <h4>Rating:{item.rating.rate}</h4>
                 </div>
@@ -88,7 +88,7 @@ export default function Cart1({ cart, setcart }) {
                   style={{ border: "none" }}
                   onClick={() => handleDecrement(item.id)}
                 >
-                  −
+                  -
                 </button>
               </div>
               <div className="priceeee">
