@@ -1,0 +1,33 @@
+.cart .box{
+    display: flex;
+}
+
+.cart-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px auto;
+}
+
+.button-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.priceeee{
+    display: flex;
+    flex-direction: column;
+}
+
+.totalpr{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.productsjs{
+    display: flex;
+    flex-direction: column;
+}
