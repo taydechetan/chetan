@@ -26,8 +26,19 @@
     justify-content: space-around;
 }
 
-
 .productsjs{
     display: flex;
     flex-direction: column;
+}
+
+.paybtn button:hover{
+  background-color: aliceblue;
+}
+
+.btnadd:hover{
+    background-color: aliceblue;
+}
+
+.btnwatch:hover{
+    background-color: aliceblue;
 }

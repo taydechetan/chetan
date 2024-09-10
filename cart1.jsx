@@ -16,13 +16,13 @@ export default function Cart1({ cart, setCart }) {
       const list = localStorage.getItem("cart");
       return list ? JSON.parse(list) : [];
     };
-
+    
     const initialCart = getLocalItems();
     setCart(initialCart);
   }, [setCart]);
 
   useEffect(() => {
-    handlePrice();
+    handlePrice();                                        
   }, [cart]);
 
   const handlePrice = () => {
@@ -34,14 +34,15 @@ export default function Cart1({ cart, setCart }) {
     });
     setPrice(total);
   };
-  //
-
+ 
+ 
   const handleRemove = (id) => {
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
+  
   const handleIncrement = (id) => {
     const updatedCart = cart.map((item) => {
       if (item.id === id) {
@@ -86,7 +87,7 @@ export default function Cart1({ cart, setCart }) {
             <div className="cart-box" key={item.id}>
               <div className="cart-img d-flex">
                 <img
-                  src={item.product_images[0].product_image}
+                  src={item?.product_images[0]?.product_image}
                   // alt="img1"
                   // alt={item.name || item.title}
                   style={{ width: "100px" }}
@@ -94,7 +95,7 @@ export default function Cart1({ cart, setCart }) {
                 <div className="d-flex">
                   <div className="productsjs d-flex">
                     <h4 className="ms-2 mt-2">Product-Name:{item.name}</h4>
-                    <h4 className="ms-2 mt-2">{item.product_image}</h4>
+                    {/* <h4 className="ms-2 mt-2">{item.product_image}</h4> */}
                     <h4>Rating: {item.rating?.rate || "N/A"}</h4>
                   </div>
                 </div>
@@ -162,6 +163,7 @@ export default function Cart1({ cart, setCart }) {
           </button>
 
           <button
+            className="btnadd"
             style={{
               width: "40%",
               padding: "10px",
@@ -175,6 +177,7 @@ export default function Cart1({ cart, setCart }) {
           </button>
 
           <button
+            className="btnwatch"
             style={{
               width: "40%",
               padding: "10px",
@@ -190,45 +193,22 @@ export default function Cart1({ cart, setCart }) {
           </button>
         </div>
 
-        {/* <div className="mt-3" style={{ marginLeft: "27%"}}>
-          {checkout ? (
-            <Paypal />
-          ) : (
-            <button
-              // className="btn btn-primary"
-              style={{
-                borderRadius: "20px",
-                width: "40%%",
-                padding: "10px",
-                borderRadius: "20px",
-                marginTop: "10px",
-                border: "1px solid blue",
-                color: "blue",
-                backgroundColor: "primary",
-              }}
-              // onClick={() => setcheckout(true)}
-            >
-             <FaCcPaypal style={{color:"black"}} /> PayPal
-            </button>
-          )}
-        </div> */}
-
         <div
-          className="mt-3"
+          className="mt-3 paybtn"
           style={{
-            width: "50%",
+            width: "40%",
             border: "1px solid blue",
             borderRadius: "20px",
-            margin:"20px auto"
+            margin: "20px auto",
           }}
         >
           <button
             onClick={togglePaypal}
             style={{
               height: "35px",
-              width: "50%",
-              border: "1px solid black",
-              borderRadius: "15px",
+              // width: "50%",
+              border: "1px solid blue",
+              borderRadius: "10px",
               display: "flex",
               alignitems: "center",
               justifycontent: "center",

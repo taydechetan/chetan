@@ -1,0 +1,38 @@
+.card {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto; /* Center the card */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Add shadow for better visual */
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  @media (min-width: 576px) {
+    .card {
+      max-width: 300px; /* Adjust max width for larger screens */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .card {
+      max-width: 400px; /* Adjust max width for even larger screens */
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .card {
+      max-width: 500px; /* Further adjustment if needed */
+    }
+  }
+  
+  .btn {
+    width: 100%;
+  }
+  

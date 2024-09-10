@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.selling-img{
+    height: 300px;
+    width: 90%;
+    margin: 20px auto;
+    margin: 30px 30px 30px 30px; 
+    border-radius: 10px;
+}

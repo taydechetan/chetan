@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.fromm{
+    height: 50vh;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.invalid-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.invalid-text input{
+    height: 50px;
+    width: 80%;
+    border: 0.1px solid black;
+}
+
+.custom-input::placeholder {
+    font-size: 16px;
+    color: rgb(71, 69, 69);     
+}
+  
+.custom-input:focus::placeholder {
+    color: rgb(126, 124, 124);
+    top: 0; 
+}
+
+.forgot-button{
+    width: 70%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+}

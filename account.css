@@ -1,0 +1,226 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section{
+    height: 60vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.formm{
+    height: 30vh;
+    width: 100vw;
+    margin-top: 200px;
+}
+
+.images1{
+    /* height: 20rem; 
+     width: 100%;  */
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accounts input{
+    height: 50px;
+    width: 400px;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+/* 
+.createacc{
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.accounts button{
+    height: 40px;
+    width: 400px;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4e4cf5;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    /* font-family: Fantasy; */
+}
+
+.custom-input{
+    position: relative;
+    padding-left: 10px;
+}
+
+
+.custom-input::placeholder{
+    position: absolute;
+    left: 10px;
+}
+
+.already{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    position: relative; 
+    width:100%;
+    /* height: 440px;  */
+    background-color: #FFF;
+    /* box-shadow: 25px 30px 55px #5557; */
+    border-radius: 13px;
+    margin-top: 200px;
+}
+
+.accounts input{
+    width: 90%;
+    border: 0.1px solid black;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    color: black;
+}
+
+.custom-input::placeholder {
+    font-size: 16px;
+    color: rgb(71, 69, 69);     
+}
+  
+.custom-input:focus::placeholder {
+    color: rgb(126, 124, 124);
+    top: 0; 
+}
+  
+.react-tel-input .country-list .country {
+    padding: 5px 9px 13px 46px;
+    display: flex;
+}
+
+/* second regax */
+
+.account-btn{
+    width: 40%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 232px;
+    margin-top: 40px;
+}
+
+.input-ft{
+    width: 53%;
+}
+
+.second-form input{
+    height: 60px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+
+.icon{
+    position: absolute;
+    margin-left: 300px;
+    width: 20px;
+    font-size: 1.3rem;
+    /* background-color: red; */
+}
+/* 
+.formm-second{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    width: 60%;
+} */
+
+.formm .container-second{
+    height: 50vh;
+    width: 60%;
+    margin: 20px auto;
+}
+/* 
+.second-form{
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 60%;
+    position: absolute;
+}
+ */
+
+.second-form {
+    margin-left: -57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 50%;
+    position: absolute;
+}
+
+@media (max-width: 707px) {
+    .second-form {
+        margin-top: 60px;
+        /* margin-left:0px;      */
+        margin-left: -20px;    
+        width: 90%; 
+        height: auto; 
+        position: absolute; 
+    }
+    .icon{
+         width: 200px;
+         margin-left: 300px;
+    }
+    .second-form input{
+        height: 60px;
+        width: 300px;
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
+    }
+    
+    .account-btn {
+        width: 66%;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 19px;
+    }
+}
+
+
+.custom-input::placeholder {
+    font-size: 16px;
+    color: rgb(71, 69, 69);     
+}
+  
+.custom-input:focus::placeholder {
+    color: rgb(126, 124, 124);
+    top: 0; 
+}

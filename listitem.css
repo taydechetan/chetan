@@ -1,0 +1,26 @@
+.serchty{
+    /* padding: 8px; */
+    font-size: 2.2rem;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.serchty p{
+    background-color: rgb(100, 100, 226);
+}
+
+
+.cardy {
+    width: 100%;
+  }
+@media (max-width: 750px) {
+    .cardy {
+      width: 80%; 
+      margin: 0 auto; 
+    }
+  }
+  

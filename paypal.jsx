@@ -32,5 +32,4 @@ const PayPalButton = () => {
     </PayPalScriptProvider>
   );
 };
-
 export default PayPalButton;

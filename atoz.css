@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-flude{
+    /* height: 70px; */
+    background-color: #e98438;
+}
+
+
+.collapse{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.collapse ul li{
+    list-style: none;
+    padding: 10px 10px;
+    font: 500;
+    font-size: 1.2rem;
+    color: white;
+    padding: 0 0 0 100px;
+}
+
+
