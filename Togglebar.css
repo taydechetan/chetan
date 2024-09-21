@@ -1,0 +1,42 @@
+.togglebar-body {
+  padding: 10px;
+  border-radius: 0; 
+}
+
+.togglebar-header {
+  background-color: #e0e0e0;
+  border-bottom: 1px solid #ccc; 
+}
+
+.togglebar-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.togglebar-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  font-size: 16px;
+  height: 40px;
+  padding: 10px 20px 10px 38px;
+}
+
+.togglebar-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.togglebar-item {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.togglebar-item:hover {
+  background-color: #f5f5f5;
+}
+

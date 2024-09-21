@@ -1,0 +1,195 @@
+.Header-section {
+  background-color: #44bd79;
+  padding: 10px 0;
+}
+
+.icon {
+  margin-right: 15px;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.icon-location {
+  margin-left: 10px;
+}
+
+.whatsapp-icon {
+  margin-left: auto;
+  font-size: 18px;
+}
+
+.header-second {
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-second .navbar-brand img {
+  max-width: 150px;
+  height: auto;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.custom-login,
+.custom-signuppp {
+  padding: 10px 20px;
+  background-color: #782a8c;
+  color: white;
+  border: none;
+  margin-right: 20px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-login:hover,
+.custom-signuppp:hover {
+  background-color: white;
+  color: #782a8c;
+  border: 1px solid #782a8c;
+}
+
+.search-icon,
+.menu-icon {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.shopping-bag {
+  position: relative;
+  margin-right: 10px;
+}
+
+.shopping-bag .badge {
+  background-color: #007bff;
+  font-size: 10px;
+}
+
+.mx-4 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+@media (max-width: 992px) {
+  .custom-login,
+  .custom-signup {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .navbar-brand img {
+    max-width: 120px;
+  }
+
+  .search-icon,
+  .menu-icon {
+    font-size: 18px;
+  }
+
+  .shopping-bag {
+    margin-right: 5px;
+  }
+
+  .header-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .icon {
+    font-size: 12px;
+  }
+
+  .custom-login,
+  .custom-signup {
+    padding: 6px 10px;
+    margin-right: 10px;
+  }
+
+  .navbar-brand img {
+    max-width: 100px;
+  }
+
+  .header-buttons {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .mx-4 {
+    margin: 10px 0;
+  }
+
+  .shopping-bag .badge {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .Header-section {
+    text-align: center;
+  }
+
+  .icon {
+    font-size: 11px;
+    margin-right: 8px;
+  }
+
+  .navbar-brand img {
+    max-width: 90px;
+  }
+
+  .custom-login,
+  .custom-signup {
+    font-size: 12px;
+    padding: 5px 8px;
+    margin-right: 5px;
+  }
+
+  .header-buttons {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-icon,
+  .menu-icon {
+    font-size: 16px;
+  }
+
+  .shopping-bag .badge {
+    font-size: 7px;
+  }
+}
+
+@media (min-width: 768px) {
+  .thisdd {
+    display: none;
+  }
+}
+
+.button-style {
+  text-decoration: none;
+  padding: 12px 15px;
+  background: #782a8c;
+  border-radius: 5px;
+  color: #fff;
+  border: 1px solid #782a8c;
+  transition: 0.2s all;
+  cursor: pointer;
+}
+
+.button-style:hover {
+  background: white;
+  border: #782a8c;
+}
+
+
+
